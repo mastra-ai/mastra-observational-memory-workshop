@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What's Next — Observational Memory Workshop</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="shared.css">
+    <style>
+        /* ===== Drop sidebar, full width ===== */
+        .page { display: block; }
+        .main {
+            margin-left: 0;
+            max-width: 100%;
+            padding: 0 4rem;
+        }
+
+        /* ===== Full-screen centered sections ===== */
+        .section {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        /* ===== Roadmap list ===== */
+        .roadmap-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 2rem;
+        }
+
+        .roadmap-list li {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .roadmap-list li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+        }
+
+        .roadmap-list li strong {
+            color: var(--text-primary);
+        }
+
+        /* ===== Callout box ===== */
+        .callout {
+            background: var(--accent-dim);
+            border: 1px solid rgba(99, 102, 241, 0.25);
+            border-radius: 10px;
+            padding: 1.25rem 1.5rem;
+            margin-top: 2.5rem;
+            font-size: 1.05rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .callout strong {
+            color: var(--accent);
+        }
+
+        /* ===== Resource link cards ===== */
+        .resource-grid {
+            margin-top: 2rem;
+        }
+
+        .resource-card {
+            display: block;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 1.25rem 1.5rem;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .resource-card:hover {
+            border-color: var(--accent);
+            background: rgba(99, 102, 241, 0.05);
+            transform: translateY(-2px);
+        }
+
+        .resource-card-title {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.35rem;
+        }
+
+        .resource-card-url {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            font-family: var(--font-mono);
+            word-break: break-all;
+        }
+
+        .resource-card:hover .resource-card-url {
+            color: var(--accent);
+        }
+
+        /* ===== Q&A section ===== */
+        .qna-section {
+            text-align: center;
+            justify-content: center;
+        }
+
+        .qna-section h2 {
+            font-size: 5rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+        }
+
+        .qna-author {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.75rem;
+        }
+
+        .qna-links {
+            font-size: 1.1rem;
+            color: var(--text-dim);
+        }
+
+        .qna-links a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        .qna-links a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Top Navigation -->
+<nav class="topnav">
+    <a href="01-intro.html" class="topnav-brand">OM Workshop</a>
+    <div class="topnav-sections">
+        <a href="01-intro.html">Intro</a>
+        <a href="02-the-problem.html">The Problem</a>
+        <a href="03-the-insight.html">The Insight</a>
+        <a href="04-the-proof.html">The Proof</a>
+        <a href="05-whats-next.html" class="active">What's Next</a>
+        <a href="06-demo.html">Demo</a>
+    </div>
+    <div class="topnav-nav">
+        <a href="04-the-proof.html">← prev</a>
+        <a href="06-demo.html">next →</a>
+    </div>
+</nav>
+
+<div class="page">
+    <main class="main">
+
+        <!-- Section 1: Roadmap -->
+        <div class="section" id="roadmap">
+            <div class="fade-on-scroll">
+                <p class="section-label">What's Next</p>
+                <h2>What's next for Observational Memory</h2>
+
+                <ul class="roadmap-list">
+                    <li><strong>OpenCode plugin</strong> — OM for your terminal coding workflow</li>
+                    <li><strong>Intentional retrieval via tool calls</strong> — reinforce faded memories</li>
+                    <li><strong>Customizable Observer/Reflector prompts</strong></li>
+                </ul>
+
+
+            </div>
+        </div>
+
+        <!-- Section 2: Resources -->
+        <div class="section" id="resources">
+            <div class="fade-on-scroll">
+                <h2>Resources</h2>
+
+                <div class="resource-grid grid-3">
+                    <a href="https://mastra.ai/docs/memory/observational-memory" target="_blank" class="resource-card">
+                        <div class="resource-card-title">Documentation</div>
+                        <div class="resource-card-url">mastra.ai/docs/memory/observational-memory</div>
+                    </a>
+                    <a href="https://mastra.ai/blog/observational-memory" target="_blank" class="resource-card">
+                        <div class="resource-card-title">Blog Post</div>
+                        <div class="resource-card-url">mastra.ai/blog/observational-memory</div>
+                    </a>
+                    <a href="https://mastra.ai/research/observational-memory" target="_blank" class="resource-card">
+                        <div class="resource-card-title">Research Page</div>
+                        <div class="resource-card-url">mastra.ai/research/observational-memory</div>
+                    </a>
+                    <a href="https://github.com/mastra-ai/mastra" target="_blank" class="resource-card">
+                        <div class="resource-card-title">Source Code</div>
+                        <div class="resource-card-url">github.com/mastra-ai/mastra</div>
+                    </a>
+                    <a href="https://venturebeat.com/ai/observational-memory" target="_blank" class="resource-card">
+                        <div class="resource-card-title">VentureBeat Article</div>
+                        <div class="resource-card-url">venturebeat.com/ai/observational-memory...</div>
+                    </a>
+                    <a href="https://github.com/mastra-ai/mastra/tree/main/explorations/longmemeval" target="_blank" class="resource-card">
+                        <div class="resource-card-title">LongMemEval Runner</div>
+                        <div class="resource-card-url">github.com/mastra-ai/mastra/tree/main/explorations/longmemeval</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 3: Q&A -->
+        <div class="section qna-section" id="qna">
+            <div class="fade-on-scroll">
+                <h2>Q&A</h2>
+                <p class="qna-author">Tyler Barnes · @tylerdbarnes</p>
+                <p class="qna-links">
+                    <a href="https://mastra.ai" target="_blank">mastra.ai</a> · 
+                    <a href="https://discord.gg/mastra" target="_blank">discord.gg/mastra</a>
+                </p>
+            </div>
+        </div>
+
+    </main>
+</div>
+
+<script src="shared.js"></script>
+</body>
+</html>

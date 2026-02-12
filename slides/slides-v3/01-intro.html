@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intro — Observational Memory Workshop</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="shared.css">
+    <style>
+        /* ===== Drop sidebar, full width ===== */
+        .page { display: block; }
+        .main {
+            margin-left: 0;
+            max-width: 100%;
+            padding: 0 4rem;
+        }
+
+        /* ===== Full-screen centered sections ===== */
+        .section {
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            min-height: calc(100vh - var(--topnav-height));
+        }
+
+        .subtitle {
+            font-size: 1.4rem;
+            font-weight: 400;
+            color: var(--text-secondary);
+            margin-top: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .author {
+            font-size: 1rem;
+            color: var(--text-dim);
+            margin-top: 0.5rem;
+        }
+
+        .intro-arrow {
+            background: none;
+            border: 1px solid var(--border-light);
+            color: var(--text-dim);
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            font-family: var(--font-sans);
+            margin-top: 3rem;
+            text-decoration: none;
+        }
+
+        .intro-arrow:hover {
+            color: var(--text-secondary);
+            border-color: var(--text-dim);
+        }
+    </style>
+</head>
+<body>
+
+<!-- Top Navigation -->
+<nav class="topnav">
+    <a href="01-intro.html" class="topnav-brand">OM Workshop</a>
+    <div class="topnav-sections">
+        <a href="01-intro.html" class="active">Intro</a>
+        <a href="02-the-problem.html">The Problem</a>
+        <a href="03-the-insight.html">The Insight</a>
+        <a href="04-the-proof.html">The Proof</a>
+        <a href="05-whats-next.html">What's Next</a>
+        <a href="06-demo.html">Demo</a>
+    </div>
+    <div class="topnav-nav">
+        <a href="#" class="disabled" style="visibility: hidden;">← prev</a>
+        <a href="02-the-problem.html">next →</a>
+    </div>
+</nav>
+
+<div class="page">
+    <main class="main">
+
+        <div class="section fade-on-scroll" id="title">
+            <p class="section-label">Mastra Workshop</p>
+            <h1>Observational Memory</h1>
+            <p class="subtitle">A human-inspired memory system for AI agents</p>
+            <p class="author">Tyler Barnes · Founding Engineer, Mastra</p>
+            <a href="02-the-problem.html" class="intro-arrow">↓</a>
+        </div>
+
+    </main>
+</div>
+
+<script src="shared.js"></script>
+</body>
+</html>

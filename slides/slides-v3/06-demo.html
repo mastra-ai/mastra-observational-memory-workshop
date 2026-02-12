@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo — Observational Memory Workshop</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="shared.css">
+    <style>
+        /* ===== Drop sidebar, full width ===== */
+        .page { display: block; }
+        .main {
+            margin-left: 0;
+            max-width: 100%;
+            padding: 0 4rem;
+        }
+
+        /* ===== Full-screen centered sections ===== */
+        .section {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        /* ===== Demo cards with large numbers ===== */
+        .demo-card {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .demo-card-number {
+            position: absolute;
+            top: -0.25rem;
+            right: 0.5rem;
+            font-size: 3rem;
+            font-weight: 700;
+            opacity: 0.15;
+            line-height: 1;
+            color: var(--text-primary);
+        }
+
+        .demo-card-title {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .demo-card-desc {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            line-height: 1.55;
+        }
+
+        /* ===== Large gradient heading ===== */
+        .section h2.gradient {
+            font-size: 3rem;
+            background: linear-gradient(135deg, var(--text-primary) 0%, var(--accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .subtitle {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            margin-bottom: 2.5rem;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Top Navigation -->
+<nav class="topnav">
+    <a href="01-intro.html" class="topnav-brand">OM Workshop</a>
+    <div class="topnav-sections">
+        <a href="01-intro.html">Intro</a>
+        <a href="02-the-problem.html">The Problem</a>
+        <a href="03-the-insight.html">The Insight</a>
+        <a href="04-the-proof.html">The Proof</a>
+        <a href="05-whats-next.html">What's Next</a>
+        <a href="06-demo.html" class="active">Demo</a>
+    </div>
+    <div class="topnav-nav">
+        <a href="05-whats-next.html">← prev</a>
+        <a href="#" class="disabled" style="visibility: hidden;">next →</a>
+    </div>
+</nav>
+
+<!-- Page -->
+<div class="page">
+    <main class="main">
+
+        <!-- Demo Section -->
+        <section class="section">
+            <div class="section-label">Demo</div>
+            <h2 class="gradient">Let's build</h2>
+            <div class="grid-2 fade-on-scroll">
+                <div class="card demo-card">
+                    <div class="demo-card-number">01</div>
+                    <div class="demo-card-title">Code Research Agent</div>
+                    <div class="demo-card-desc">OM compressing tool-heavy output from code exploration.</div>
+                </div>
+
+                <div class="card demo-card">
+                    <div class="demo-card-number">02</div>
+                    <div class="demo-card-title">Playwright MCP Agent</div>
+                    <div class="demo-card-desc">Browser automation with OM managing massive DOM and accessibility tree context.</div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+</div>
+
+<script src="shared.js"></script>
+
+</body>
+</html>

@@ -2,28 +2,23 @@ import { Mastra } from '@mastra/core/mastra';
 import { Agent } from '@mastra/core/agent';
 import { Memory } from '@mastra/memory';
 import { LibSQLStore } from '@mastra/libsql';
-import { createExecuteCommandTool } from './tools/execute-command';
-import { createViewTool } from './tools/file-view';
+import { createExecuteCommandTool } from '../tools/execute-command';
+import { createViewTool } from '../tools/file-view';
 
 const storage = new LibSQLStore({
-  url: 'file:./data/memory.db',
+  id: "libsql",
+  url: 'file:memory.db',
 });
 
 const memory = new Memory({
   storage,
   options: {
-    lastMessages: 20,
-    observationalMemory: {
-      enabled: true,
-      observation: {
-        // Lower threshold for demo (normally 30k)
-        messageTokens: 5000,
-      },
-    },
+    observationalMemory: true,
   },
 });
 
 const codeResearchAgent = new Agent({
+  id: "code",
   name: 'code-research-agent',
   instructions: `You are a code research agent. You explore codebases, read files, run commands, and help users understand how code works.
 
@@ -38,7 +33,7 @@ When researching code:
 4. Summarize your findings clearly
 
 Do NOT call "read" — always use "view".`,
-  model: 'openai/gpt-4o',
+  model: 'cerebras/zai-glm-4.7',
   memory,
   tools: {
     execute_command: createExecuteCommandTool(),

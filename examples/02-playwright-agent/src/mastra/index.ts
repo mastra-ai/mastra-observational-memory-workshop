@@ -5,20 +5,14 @@ import { MCPClient } from '@mastra/mcp';
 import { LibSQLStore } from '@mastra/libsql';
 
 const storage = new LibSQLStore({
-  url: 'file:./data/memory.db',
+  id: "libsql",
+  url: 'file:memory.db',
 });
 
 const memory = new Memory({
   storage,
   options: {
-    lastMessages: 20,
-    observationalMemory: {
-      enabled: true,
-      observation: {
-        // Lower threshold for demo (normally 30k)
-        messageTokens: 5000,
-      },
-    },
+    observationalMemory: true,
   },
 });
 
@@ -34,6 +28,7 @@ const mcp = new MCPClient({
 });
 
 const playwrightAgent = new Agent({
+  id: 'playwright-agent',
   name: 'playwright-agent',
   instructions: `You are a browser automation agent. You can navigate the web, interact with pages, fill forms, click buttons, and extract information using Playwright.
 
@@ -43,7 +38,7 @@ When given a task:
 3. Extract and report the information found
 
 Be thorough but concise in your responses.`,
-  model: 'openai/gpt-4o',
+  model: 'cerebras/zai-glm-4.7',
   memory,
   tools: await mcp.listTools(),
   defaultOptions: {
@@ -53,4 +48,7 @@ Be thorough but concise in your responses.`,
 
 export const mastra = new Mastra({
   agents: { 'playwright-agent': playwrightAgent },
+  server: {
+    port: 4112,
+  },
 });
