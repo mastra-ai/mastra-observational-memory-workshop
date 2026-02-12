@@ -1,0 +1,7 @@
+{
+  "name": "workshop-observational-memory",
+  "private": true,
+  "scripts": {
+    "setup": "pnpm install"
+  }
+}
