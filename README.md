@@ -43,6 +43,14 @@ pnpm dev
 
 ## Workshop Examples
 
+### [00-personal-assistant-agent](./examples/00-personal-assistant-agent)
+
+A personal assistant with calendar, Slack, and meeting notes tools:
+
+- Searches Slack channels, queries meeting notes, books calendar events
+- Tool output contains verbose context (Slack threads, full meeting notes)
+- OM compresses findings into concise observations for follow-up questions
+
 ### [01-code-research-agent](./examples/01-code-research-agent)
 
 A coding agent that explores codebases:
